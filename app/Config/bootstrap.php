@@ -67,6 +67,12 @@ CakePlugin::load('DebugKit');
 CakePlugin::load('Migrations');
 
 App::uses('PhpReader', 'Configure');
-// Read config files from app/config
 Configure::config('default', new PhpReader());
 Configure::load('application', 'default');
+
+if (env('CAKE_ENV') == 'production') {
+	Configure::write('Environment', 'production');
+	Configure::write('debug', 0);
+} else {
+	Configure::write('Environment', 'development');
+}
