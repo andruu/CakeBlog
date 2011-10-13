@@ -1,4 +1,6 @@
 <?php
+// Set base path
+define('BASE_PATH', Router::url('/'));
 class AppController extends Controller {
 	public $components = array(
 		'Session',
@@ -10,6 +12,13 @@ class AppController extends Controller {
 				)
 			)
 		)
+	);
+	
+	public $helpers = array(
+		'Js' => array('Jquery'),
+		'Html',
+		'Form',
+		'Session',
 	);
 }
 ?>

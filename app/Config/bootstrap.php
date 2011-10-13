@@ -71,8 +71,8 @@ Configure::config('default', new PhpReader());
 Configure::load('application', 'default');
 
 if (env('CAKE_ENV') == 'production') {
-	Configure::write('Environment', 'production');
+	Configure::write('Site.ENV', 'production');
 	Configure::write('debug', 0);
 } else {
-	Configure::write('Environment', 'development');
+	Configure::write('Site.ENV', 'development');
 }

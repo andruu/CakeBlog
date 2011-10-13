@@ -9,6 +9,7 @@ class UsersController extends AppController {
 
 	public function beforeFilter () {
 		$this->Auth->allow('add');
+		$this->set('hide_right_column', true);
 		parent::beforeFilter();
 	}
 
@@ -23,7 +24,7 @@ class UsersController extends AppController {
 	}
 	
 	public function logout () {
-		
+		$this->redirect($this->Auth->logout());
 	}
 
 
