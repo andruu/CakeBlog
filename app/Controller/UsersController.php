@@ -7,6 +7,25 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+	public function beforeFilter () {
+		$this->Auth->allow('add');
+		parent::beforeFilter();
+	}
+
+	public function login () {
+		if ($this->request->is('post')) {
+			if ($this->Auth->login()) {
+				return $this->redirect($this->Auth->redirect());
+			} else {
+				$this->Session->setFlash(__('Username or password is incorrect'), 'default', array(), 'auth');
+			}
+		}
+	}
+	
+	public function logout () {
+		
+	}
+
 
 /**
  * index method

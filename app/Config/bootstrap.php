@@ -65,3 +65,8 @@ Cache::config('default', array('engine' => 'File'));
  */
 CakePlugin::load('DebugKit');
 CakePlugin::load('Migrations');
+
+App::uses('PhpReader', 'Configure');
+// Read config files from app/config
+Configure::config('default', new PhpReader());
+Configure::load('application', 'default');

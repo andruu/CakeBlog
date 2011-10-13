@@ -2,3 +2,8 @@
 tags
 cake_toolbar_cache
 /app/tmp/cache/cake_toolbar_cachef616a6649887967c6413a629cb1388b1
+/app/tmp/logs/error.log
+/app/tmp/cache/persistent/cake_core_cake_console_
+/app/tmp/cache/persistent/cake_core_file_map
+/app/tmp/cache/persistent/cake_core_method_cache
+/app/tmp/cache/persistent/cake_core_migrations_
