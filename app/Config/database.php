@@ -1,15 +1,17 @@
 <?php
+
 class DATABASE_CONFIG {
 
 	public $default = array(
-		'datasource' => 'Mongodb.MongodbSource',
-		'host' => 'staff.mongohq.com',
-		'database' => 'app1447600',
-		'port' => 10021,
-		'prefix' => '',
-		'persistent' => 'true',
-		'login' => 'dizz', 
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'ec2-174-129-255-219.compute-1.amazonaws.com',
+		'port' => '3420',
+		'login' => 'dizz',
 		'password' => 'alottola',
+		'database' => 'cakeblog',
+		'prefix' => '',
+		//'encoding' => 'utf8',
 	);
 
 	public $test = array(
