@@ -12,15 +12,17 @@
 	<![endif]-->
 
 	<!-- Le styles -->
+	
 	<link rel="stylesheet/less" href="<?=BASE_PATH?>bootstrap/lib/bootstrap.less" />
 	<link rel="stylesheet/less" href="<?=BASE_PATH?>css/application.less" />
+	<link rel="stylesheet/less" href="<?=BASE_PATH?>prettify/prettify.less" />
 	
 	<script src="<?=BASE_PATH?>js/less.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?=BASE_PATH?>js/jquery.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?=BASE_PATH?>js/rails.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?=BASE_PATH?>js/bootstrap-dropdown.js" type="text/javascript"></script>
+	<script src="<?=BASE_PATH?>prettify/prettify.js" type="text/javascript"></script>
 	<script src="<?=BASE_PATH?>js/application.js" type="text/javascript"></script>
-	
 	<?=$scripts_for_layout?>
 	
 	<!-- Le fav and touch icons -->
@@ -97,7 +99,7 @@
 	<?=$this->Js->writeBuffer();?>
 	<script type="text/javascript">
 	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	    var disqus_shortname = 'cakeonheroku'; // required: replace example with your forum shortname
+	    var disqus_shortname = '<?=Configure::read('Disqus.shortname')?>'; // required: replace example with your forum shortname
 
 	    /* * * DON'T EDIT BELOW THIS LINE * * */
 	    (function () {
