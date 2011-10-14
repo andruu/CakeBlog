@@ -82,7 +82,7 @@
 				</div>
 				<? if (!isset($hide_right_column)) : ?>
 				<div class="span4">
-					<h3>Secondary content</h3>
+					<?=$this->element('recent_posts')?>
 				</div>
 				<? endif ?>
 			</div>
