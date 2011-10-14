@@ -8,7 +8,6 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 
 	public function beforeFilter () {
-		$this->Auth->allow('add');
 		$this->set('hide_right_column', true);
 		parent::beforeFilter();
 	}
@@ -16,14 +15,16 @@ class UsersController extends AppController {
 	public function login () {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
+				$this->Session->setFlash(__('You have successfully logged in.'), 'default', array('class' => 'alert-message success'), 'auth');
 				return $this->redirect($this->Auth->redirect());
 			} else {
-				$this->Session->setFlash(__('Username or password is incorrect'), 'default', array(), 'auth');
+				$this->Session->setFlash(__('Username or password is incorrect.'), 'default', array('class' => 'alert-message error'), 'auth');
 			}
 		}
 	}
 	
 	public function logout () {
+		$this->Session->setFlash(__('You have successfully logged out.'), 'default', array('class' => 'alert-message info'), 'auth');
 		$this->redirect($this->Auth->logout());
 	}
 
