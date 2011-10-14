@@ -92,7 +92,7 @@
 		</div>
 
 		<footer>
-			<p>&copy; <?=date('Y')?> Andrew Weir, All Rights Reserved.</p>
+			<p>&copy; <?=date('Y')?> <a href="http://andrw.net/" title="Andrew Weir">Andrew Weir</a>, All Rights Reserved.</p>
 		</footer>
 
 	</div> <!-- /container -->
