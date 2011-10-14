@@ -21,6 +21,10 @@ class AppController extends Controller {
 		'DebugKit.Toolbar',
 	);
 	
+	public function beforeFilter () {
+		$this->Auth->allow('display');
+	}
+	
 	public $helpers = array(
 		'Js' => array('Jquery'),
 		'Html',

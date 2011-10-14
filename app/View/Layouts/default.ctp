@@ -37,8 +37,8 @@
 				<a class="brand" href="<?=BASE_PATH?>"><?=Configure::read('Site.title')?></a>
 				<ul class="nav">
 					<li class="active"><a href="/">Home</a></li>
-					<li><a href="<?=BASE_PATH?>about">About</a></li>
-					<li><a href="<?=BASE_PATH?>contact">Contact</a></li>
+					<li><a href="<?=BASE_PATH?>pages/about">About</a></li>
+					<li><a href="<?=BASE_PATH?>pages/contact">Contact</a></li>
 				</ul>
 				<div id="profile" class="pull-right">
 					<ul class="nav">
