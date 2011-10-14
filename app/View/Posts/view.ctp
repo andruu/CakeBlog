@@ -1,2 +1,4 @@
 <?=$this->element('Posts/post', compact('post'))?>
-<?=$this->element('disqus')?>
+<div class="comments">
+	<?=$this->element('disqus')?>
+</div>
