@@ -72,7 +72,7 @@ Configure::load('application', 'default');
 
 if (env('CAKE_ENV') == 'production') {
 	Configure::write('Site.ENV', 'production');
-	Configure::write('debug', 2);
+	Configure::write('debug', 0);
 } else {
 	Configure::write('Site.ENV', 'development');
 }
