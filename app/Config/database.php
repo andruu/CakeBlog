@@ -1,6 +1,20 @@
 <?php
 
 class DATABASE_CONFIG {
+	
+	public function __construct () {
+		$this->production = array(
+			'datasource' => 'Database/Mysql',
+			'persistent' => false,
+			'host' => env('DB_HOST'),
+			'port' => env('DB_PORT'),
+			'login' => env('DB_USER'),
+			'password' => env('DB_PASS'),
+			'database' => 'cakeblog',
+			'prefix' => '',
+			//'encoding' => 'utf8',
+		);
+	}
 
 	public $development = array(
 		'datasource' => 'Database/Mysql',
@@ -8,18 +22,6 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => 'alottola',
-		'database' => 'cakeblog',
-		'prefix' => '',
-		//'encoding' => 'utf8',
-	);
-
-	public $production = array(
-		'datasource' => 'Database/Mysql',
-		'persistent' => false,
-		'host' => env('DB_HOST'),
-		'port' => env('DB_PORT'),
-		'login' => env('DB_USER'),
-		'password' => env('DB_PASS'),
 		'database' => 'cakeblog',
 		'prefix' => '',
 		//'encoding' => 'utf8',
