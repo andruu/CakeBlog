@@ -19,6 +19,9 @@ class PostsController extends AppController {
  * @return void
  */
 	public function index() {
+		$this->Post->bindModel(array(
+			'belongsTo' => array('User')
+		));
 		$this->Post->recursive = 0;
 		$this->set('posts', $this->paginate());
 	}
@@ -46,12 +49,13 @@ class PostsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Post->create();
 			if ($this->Post->save($this->request->data)) {
-				$this->Session->setFlash(__('The post has been saved'));
+				$this->Session->setFlash(__('The post has been saved'), 'default', array('class' => 'alert-message success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The post could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The post could not be saved. Please, try again.'), 'default', array('class' => 'alert-message error'));
 			}
 		}
+		$this->set('title_for_layout', 'Add new post');
 	}
 
 /**
@@ -67,14 +71,15 @@ class PostsController extends AppController {
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Post->save($this->request->data)) {
-				$this->Session->setFlash(__('The post has been saved'));
+				$this->Session->setFlash(__('The post has been saved'), 'default', array('class' => 'alert-message success'));
 				$this->redirect(array('action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The post could not be saved. Please, try again.'));
+				$this->Session->setFlash(__('The post could not be saved. Please, try again.'), 'default', array('class' => 'alert-message error'));
 			}
 		} else {
 			$this->request->data = $this->Post->read(null, $id);
 		}
+		$this->set('title_for_layout', 'Edit post');
 	}
 
 /**
@@ -92,10 +97,10 @@ class PostsController extends AppController {
 			throw new NotFoundException(__('Invalid post'));
 		}
 		if ($this->Post->delete()) {
-			$this->Session->setFlash(__('Post deleted'));
+			$this->Session->setFlash(__('Post deleted'), 'default', array('class' => 'alert-message success'));
 			$this->redirect(array('action'=>'index'));
 		}
-		$this->Session->setFlash(__('Post was not deleted'));
+		$this->Session->setFlash(__('Post was not deleted'), 'default', array('class' => 'alert-message error'));
 		$this->redirect(array('action' => 'index'));
 	}
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title><?=Configure::read('Site.title')?> | <?=$title_for_layout?></title>
+	<title><?=Configure::read('Site.title')?> &middot; <?=$title_for_layout?></title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -45,11 +45,6 @@
 						<? endif ?>
 					</ul>
 				</div>
-				<!-- <form action="" class="pull-right">
-					<input class="input-small" type="text" placeholder="Username">
-					<input class="input-small" type="password" placeholder="Password">
-					<button class="btn" type="submit">Sign in</button>
-				</form> -->
 			</div>
 		</div>
 	</div>
