@@ -27,8 +27,7 @@ class AppController extends Controller {
 		'Form',
 		'Session',
 		'Time',
-		'Text',
-		'Markdown'
+		'Text'
 	);
 }
 ?>

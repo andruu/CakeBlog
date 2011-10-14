@@ -1,11 +1,14 @@
 <?php
 $this->set('hide_right_column', true);
 echo $this->Html->css(array(
-// 
+	'/markitup/skins/simple/style.css',
+	'/markitup/sets/default/style.css',
 ), null, array('inline' => false));
 echo $this->Html->script(array(
+	'/markitup/jquery.markitup.js',
+	'/markitup/sets/default/set.js',
 	'jquery.slug.js',
-	'Posts/add.js'
+	'Posts/form.js'
 ), array('inline' => false));
 
 $form_options = array(

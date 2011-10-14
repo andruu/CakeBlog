@@ -17,6 +17,7 @@
 	
 	<script src="<?=BASE_PATH?>js/less.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?=BASE_PATH?>js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="<?=BASE_PATH?>js/rails.js" type="text/javascript" charset="utf-8"></script>
 	<script src="<?=BASE_PATH?>js/bootstrap-dropdown.js" type="text/javascript"></script>
 	<script src="<?=BASE_PATH?>js/application.js" type="text/javascript"></script>
 	
