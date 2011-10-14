@@ -29,15 +29,17 @@ class PostsController extends AppController {
 /**
  * view method
  *
- * @param string $id
+ * @param string $slug
  * @return void
  */
-	public function view($id = null) {
-		$this->Post->id = $id;
-		if (!$this->Post->exists()) {
+	public function view($slug = null) {
+		if (!$this->Post->slug_exists($slug)) {
 			throw new NotFoundException(__('Invalid post'));
 		}
-		$this->set('post', $this->Post->read(null, $id));
+		$this->Post->bindModel(array(
+			'belongsTo' => array('User')
+		));
+		$this->set('post', $this->Post->findBySlug($slug));
 	}
 
 /**
