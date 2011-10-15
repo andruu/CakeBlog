@@ -12,5 +12,8 @@ $form_options = array(
 <?=$this->Form->create('User', $form_options)?>
 <?=$this->Form->input('email')?>
 <?=$this->Form->input('password')?>
-<?=$this->Form->submit('Login', array('class' => 'btn primary'))?>
+<div class="actions">
+	<?=$this->Form->submit('Login', array('class' => 'btn primary'))?>
+	<?=$this->Html->link('Cancel', '/', array('class' => 'btn'))?>
+</div>
 <?=$this->Form->end()?>
