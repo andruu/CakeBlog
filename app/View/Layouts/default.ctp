@@ -36,9 +36,9 @@
 			<div class="container">
 				<a class="brand" href="<?=BASE_PATH?>"><?=Configure::read('Site.title')?></a>
 				<ul class="nav">
-					<li class="active"><a href="/">Home</a></li>
-					<li><a href="<?=BASE_PATH?>pages/about">About</a></li>
-					<li><a href="<?=BASE_PATH?>pages/contact">Contact</a></li>
+					<li <?=($this->name === 'Posts') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>">Home</a></li>
+					<li <?=(@$this->params['pass'][0] == 'about') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>pages/about">About</a></li>
+					<li <?=(@$this->params['pass'][0] == 'contact') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>pages/contact">Contact</a></li>
 				</ul>
 				<div id="profile" class="pull-right">
 					<ul class="nav">
