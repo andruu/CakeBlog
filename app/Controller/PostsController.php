@@ -24,6 +24,7 @@ class PostsController extends AppController {
 		));
 		$this->Post->recursive = 0;
 		$this->set('posts', $this->paginate());
+		$this->set('title_for_layout', 'Latest Posts');
 	}
 
 /**

@@ -68,8 +68,8 @@
 			<div class="page-header">
 				<h1>
 					<?=$title_for_layout?>
-					<? if ($this->action != 'view') : ?>
-					<small><?=$this->name?>#<?=$this->action?></small>
+					<? if (isset($subtitle_for_layout)) : ?>
+					<small><?=$subtitle_for_layout?></small>
 					<? endif ?>
 				</h1>
 			</div>
