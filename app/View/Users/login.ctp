@@ -13,7 +13,7 @@ $form_options = array(
 <?=$this->Form->input('email')?>
 <?=$this->Form->input('password')?>
 <div class="actions">
-	<?=$this->Form->submit('Login', array('class' => 'btn primary'))?>
+	<?=$this->Form->submit('Login', array('div' => false, 'class' => 'btn primary'))?>
 	<?=$this->Html->link('Cancel', '/', array('class' => 'btn'))?>
 </div>
 <?=$this->Form->end()?>
