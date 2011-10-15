@@ -37,7 +37,7 @@
  * how to customize the loading of plugin routes.
  */
 	CakePlugin::routes();
-
+	Router::parseExtensions('rss');
 /**
  * Load the CakePHP default routes. Remove this if you do not want to use
  * the built-in default routes.

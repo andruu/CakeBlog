@@ -6,6 +6,8 @@ App::uses('AppController', 'Controller');
  * @property Post $Post
  */
 class PostsController extends AppController {
+	
+	public $components = array('RequestHandler');
 
 	public function beforeFilter () {
 		$this->Auth->allow('index', 'view');
@@ -22,6 +24,11 @@ class PostsController extends AppController {
 		$this->Post->bindModel(array(
 			'belongsTo' => array('User')
 		));
+		
+		if ($this->RequestHandler->isRss()) {
+			return $this->set('posts', $this->Post->find('all', array('limit' => 10)));
+		}
+		
 		$this->Post->recursive = 0;
 		$this->set('posts', $this->paginate());
 		$this->set('title_for_layout', 'Latest Posts');

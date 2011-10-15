@@ -25,6 +25,8 @@
 	<script src="<?=BASE_PATH?>js/application.js" type="text/javascript"></script>
 	<?=$scripts_for_layout?>
 	
+	<?=$this->Html->meta('rss', '/posts/index.rss')?>
+	
 	<!-- Le fav and touch icons -->
 	<link rel="shortcut icon" href="images/favicon.ico">
 </head>
@@ -56,6 +58,7 @@
 						<? else : ?>
 						<li><?=$this->Html->link('Login', array('controller' => 'users', 'action' => 'login'))?></li>
 						<? endif ?>
+						<li><?=$this->Html->link('RSS', '/posts/index.rss')?></li>
 					</ul>
 				</div>
 			</div>
