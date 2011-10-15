@@ -42,7 +42,6 @@
 					<li <?=(@$this->params['pass'][0] == 'about') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>pages/about">About</a></li>
 					<li <?=(@$this->params['pass'][0] == 'contact') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>pages/contact">Contact</a></li>
 				</ul>
-				<!--nocache-->
 				<div id="profile" class="pull-right">
 					<ul class="nav">
 						<? if (AuthComponent::user('id')) : ?>
@@ -62,7 +61,6 @@
 						<li><?=$this->Html->link('RSS', '/posts/index.rss')?></li>
 					</ul>
 				</div>
-				<!--/nocache-->
 			</div>
 		</div>
 	</div>
