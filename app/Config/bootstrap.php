@@ -80,3 +80,9 @@ if (env('CAKE_ENV') == 'production') {
 } else {
 	Configure::write('Site.ENV', 'development');
 }
+
+Cache::config('sql_cache', array(
+	'engine'    => 'File',
+	'path'      => CACHE .'sql'. DS,
+	'serialize' => true,
+));
