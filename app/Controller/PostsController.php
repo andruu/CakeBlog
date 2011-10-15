@@ -19,13 +19,13 @@ class PostsController extends AppController {
 		$this->Auth->allow('index', 'view');
 		
 		// Set up caching when in production
-		if (Configure::read('Site.ENV') == 'production') {
-			if (!$this->Auth->user()) {
-				if (in_array($this->action, $this->cached_actions)) {
-					$this->cacheAction = "1 hour";
-				}
-			}
-		}
+		// if (Configure::read('Site.ENV') == 'production') {
+		// 	if (!$this->Auth->user()) {
+		// 		if (in_array($this->action, $this->cached_actions)) {
+		// 			$this->cacheAction = "1 hour";
+		// 		}
+		// 	}
+		// }
 		
 		parent::beforeFilter();
 	}
