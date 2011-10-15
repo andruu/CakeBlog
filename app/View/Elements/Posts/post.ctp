@@ -10,7 +10,7 @@
 	<? endif ?>
 	<p class="about-post">By <?=$post['User']['name']?> posted <?=$this->Time->timeAgoInWords($post['Post']['created'])?></p>
 	<div class="post-content">
-		<?=$post['Post']['body']?>
+		<?=$this->Markdown->parse($post['Post']['body'])?>
 	</div>
 	<? if ($this->action == 'index') : ?>
 	<?=$this->Html->link(null, array('controller' => 'posts', 'action' => 'view', $post['Post']['slug'], '#' => 'disqus_thread'), array('data-disqus-identifier' => $post['Post']['slug']))?>

@@ -8,7 +8,7 @@ App::uses('AppController', 'Controller');
 class PostsController extends AppController {
 	
 	public $components = array('RequestHandler');
-	public $helpers = array('Cache');
+	public $helpers = array('Cache', 'Markdown');
 	
 	public $cached_actions = array(
 		'index',
