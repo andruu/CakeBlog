@@ -39,7 +39,9 @@ class PostsController extends AppController {
 		$this->Post->bindModel(array(
 			'belongsTo' => array('User')
 		));
-		$this->set('post', $this->Post->findBySlug($slug));
+		$post = $this->Post->findBySlug($slug);
+		$this->set('post', $post);
+		$this->set('title_for_layout', $post['Post']['title']);
 	}
 
 /**

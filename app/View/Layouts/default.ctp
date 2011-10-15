@@ -36,7 +36,7 @@
 			<div class="container">
 				<a class="brand" href="<?=BASE_PATH?>"><?=Configure::read('Site.title')?></a>
 				<ul class="nav">
-					<li <?=($this->name === 'Posts') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>">Home</a></li>
+					<li <?=($this->name === 'Posts' && $this->action === 'index') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>">Home</a></li>
 					<li <?=(@$this->params['pass'][0] == 'about') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>pages/about">About</a></li>
 					<li <?=(@$this->params['pass'][0] == 'contact') ? 'class="active"' : null ?>><a href="<?=BASE_PATH?>pages/contact">Contact</a></li>
 				</ul>
@@ -66,7 +66,12 @@
 
 		<div class="content">
 			<div class="page-header">
-				<h1><?=$title_for_layout?> <small><?=$this->name?>#<?=$this->action?></small></h1>
+				<h1>
+					<?=$title_for_layout?>
+					<? if ($this->action != 'view') : ?>
+					<small><?=$this->name?>#<?=$this->action?></small>
+					<? endif ?>
+				</h1>
 			</div>
 			<div class="row">
 				<?php
