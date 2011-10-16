@@ -9,27 +9,11 @@ class PostsController extends AppController {
 	
 	public $components = array('RequestHandler');
 	public $helpers = array('Cache', 'Markdown');
-	
-	public $cached_actions = array(
-		'index',
-		'view'
-	);
 
 	public function beforeFilter () {
 		$this->Auth->allow('index', 'view');
-		
-		// Set up caching when in production
-		// if (Configure::read('Site.ENV') == 'production') {
-		// 	if (!$this->Auth->user()) {
-		// 		if (in_array($this->action, $this->cached_actions)) {
-		// 			$this->cacheAction = "1 hour";
-		// 		}
-		// 	}
-		// }
-		
 		parent::beforeFilter();
 	}
-
 
 /**
  * index method

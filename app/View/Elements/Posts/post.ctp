@@ -13,7 +13,7 @@
 		<?=$this->Markdown->parse($post['Post']['body'])?>
 	</div>
 	<? if ($this->action == 'index') : ?>
-	<?=$this->Html->link(null, array('controller' => 'posts', 'action' => 'view', $post['Post']['slug'], '#' => 'disqus_thread'), array('data-disqus-identifier' => $post['Post']['slug']))?>
+	<?=$this->Html->link(null, "http://{$_SERVER['HTTP_HOST']}" . Router::url(array('controller' => 'posts', 'action' => 'view', $post['Post']['slug'], '#' => 'disqus_thread')), array('data-disqus-identifier' => $post['Post']['slug']))?>
 	<? else : ?>
 	<div class="share">
 		<!-- AddThis Button BEGIN -->
